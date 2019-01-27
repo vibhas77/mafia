@@ -17,9 +17,9 @@ Usual Features :
 
 2) Two options will be shown to him upon entering the website.
 
-2.1) Create a room
+   Create a room
 
-2.2) Join a room
+   Join a room
 
 3) When creating a room : He has to set the rules for the game. He can also import from a template. There will be some defaults such as the max number of players. The usual ratio of mafias, healers, detective and villagers in the room settings. But it can be modified when creating a room. Thus a room should ideally have the following data structure of room
 
