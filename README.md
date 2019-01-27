@@ -16,6 +16,7 @@ Usual Features :
 1) User enters the url into their browser.
 
 2) Two options will be shown to him upon entering the website.
+
 a ) Create a room
 
 b) Join a room
