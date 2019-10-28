@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import MafiaLogo from '../mafia-logo.png';
 import Button from "react-bootstrap/Button";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import Login from "./Login";
+import Login from "../auth/Login";
 import {
     BrowserRouter as Router,
     Switch,
@@ -14,9 +14,10 @@ import {
     Link,
     Redirect
 } from "react-router-dom";
-import Signup from "./Signup";
+import Signup from "../auth/Signup";
 import Rules from "./Rules";
 import Leaderboard from "./Leaderboard";
+import AuthenticatedRoute from "../auth/AuthenticatedRoute";
 
 function Welcome() {
     return (
@@ -26,7 +27,7 @@ function Welcome() {
                     <Col lg={12}>
                         <Card>
                             <Card.Body style={{textAlign : 'center'}}>
-                                <h1>Mafia Online!</h1>
+                                <Link to={'/'} style={{textDecoration: 'none', color: 'black'}}><h1>Mafia Online!</h1></Link>
                                 <h4>The famous mafia game is now online</h4>
                             </Card.Body>
                             <Card.Subtitle>
@@ -38,14 +39,14 @@ function Welcome() {
                 <Row style={{paddingTop : '3em'}}>
                     <Col md={3}>
                         <Card>
-                            <Card.Img src = {MafiaLogo} />
+                            <Link to={'/'} style={{textDecoration: 'none', color: 'black'}}><Card.Img src = {MafiaLogo} /></Link>
                         </Card>
                     </Col>
                     <Col md={6}>
                         <Route path={'/login'} component={Login} />
                         <Route path={'/signup'} component={Signup}/>
                         <Route path={'/rules'} component={Rules}/>
-                        <Route path={'/leaderboard'} component={Leaderboard}/>
+                        <AuthenticatedRoute path={'/leaderboard'} component={Leaderboard}/>
                     </Col>
                     <Col md={3}>
                         <Card>
