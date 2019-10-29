@@ -12,6 +12,8 @@ import {
     Link,
     Redirect
 } from "react-router-dom";
+import AuthenticatedRoute from "./auth/AuthenticatedRoute";
+import CoreApp from "./app/CoreApp";
 
 library.add(fab, faCheckSquare, faCoffee , faUser , faClipboard , faList , faTrophy);
 
@@ -20,6 +22,7 @@ function App() {
       <Router>
           <Switch>
               <Route path="/" component={Home} />
+              <AuthenticatedRoute path={'/app'} component = {CoreApp} />
               {/*<Redirect from="/" to="/home" />*/}
           </Switch>
       </Router>

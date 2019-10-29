@@ -19,7 +19,7 @@ import Rules from "./Rules";
 import Leaderboard from "./Leaderboard";
 import AuthenticatedRoute from "../auth/AuthenticatedRoute";
 
-function Welcome() {
+function Welcome(props) {
     return (
         <div>
             <Container style={{paddingTop : '3em'}}>
@@ -43,10 +43,10 @@ function Welcome() {
                         </Card>
                     </Col>
                     <Col md={6}>
-                        <Route path={'/login'} component={Login} />
-                        <Route path={'/signup'} component={Signup}/>
-                        <Route path={'/rules'} component={Rules}/>
-                        <AuthenticatedRoute path={'/leaderboard'} component={Leaderboard}/>
+                        <Route exact path={`${props.match.url}login`} component={Login} />
+                        <Route exact path={`${props.match.url}signup`} component={Signup}/>
+                        <Route exact path={`${props.match.url}rules`} component={Rules}/>
+                        <Route exact path={`${props.match.url}leaderboard`} component={Leaderboard}/>
                     </Col>
                     <Col md={3}>
                         <Card>

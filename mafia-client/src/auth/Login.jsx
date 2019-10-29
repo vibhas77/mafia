@@ -1,4 +1,4 @@
-import React, { useState , Component } from 'react'
+import React, { useState , Component } from 'react';
 import Card from "react-bootstrap/Card";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Form from "react-bootstrap/Form";
@@ -17,7 +17,7 @@ class Login extends Component {
         super(props);
 
         this.state = {
-            email: 'in28minutes',
+            email: '',
             password: '',
             hasLoginFailed: false,
             showSuccessMessage: false
@@ -54,7 +54,7 @@ class Login extends Component {
             .executeBasicAuthenticationService(this.state.email, this.state.password)
             .then(() => {
                 AuthenticationService.registerSuccessfulLogin(this.state.email, this.state.password)
-                this.props.history.push(`/courses`)
+                this.props.history.push(`/app`)
             }).catch(() => {
             this.setState({ showSuccessMessage: false });
             this.setState({ hasLoginFailed: true });
